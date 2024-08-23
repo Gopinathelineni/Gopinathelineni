@@ -17,3 +17,14 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+  - task: AzureResourceManagerTemplateDeployment@3
+    inputs:
+      deploymentScope: 'Resource Group'
+      azureResourceManagerConnection: 'Free Trial(aae77d6a-1ec4-497d-aeb7-a96f562d0d1f)'
+      subscriptionId: 'aae77d6a-1ec4-497d-aeb7-a96f562d0d1f'
+      action: 'Create Or Update Resource Group'
+      resourceGroupName: 'test-rg'
+      location: 'South India'
+      templateLocation: 'Linked artifact'
+      csmFile: 'D:\Desktop files 18-04-2024'
+      deploymentMode: 'Incremental'
